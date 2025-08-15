@@ -2,11 +2,12 @@
 
 A modern web application that combines cryptocurrency market data with weather information, providing a unique dashboard experience.
 
-Live Link: **[Click here to view the live application](https://crypto-weather-nexus-eta.vercel.app/)**
+Live Link: **[Click here to view the live application](https://crypto-weather-nexus.vercel.app/)**
 
 ## Features
 
 ### Cryptocurrency Section
+
 - Real-time price updates for major cryptocurrencies
 - Price change indicators with color coding
 - Market cap and volume information
@@ -18,6 +19,7 @@ Live Link: **[Click here to view the live application](https://crypto-weather-ne
   - Favorite functionality
 
 ### Weather Section
+
 - Current weather conditions for major cities
 - Temperature, humidity, and wind speed
 - Weather condition icons
@@ -28,11 +30,13 @@ Live Link: **[Click here to view the live application](https://crypto-weather-ne
   - Favorite functionality
 
 ### News Section
+
 - Latest cryptocurrency and weather-related news
 - News source attribution
 - Timestamp for each article
 
 ### Favorites
+
 - Save favorite cryptocurrencies and cities
 - Quick access to saved items
 - Persistent storage using localStorage
@@ -42,7 +46,7 @@ Live Link: **[Click here to view the live application](https://crypto-weather-ne
 - **Frontend**: Next.js 14, React, TypeScript
 - **Styling**: Tailwind CSS
 - **State Management**: Redux Toolkit
-- **API Integration**: 
+- **API Integration**:
   - CoinGecko API for cryptocurrency data
   - OpenWeatherMap API for weather data
   - News API for news articles
@@ -62,23 +66,27 @@ Live Link: **[Click here to view the live application](https://crypto-weather-ne
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/VamsiKrishnaThota03/crypto-weather-nexus.git
    cd crypto-weather-nexus
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. Create a `.env.local` file in the root directory with your API keys:
+
    ```
    OPENWEATHER_API_KEY=your_openweather_api_key
    NEWS_API_KEY=your_news_api_key
    ```
 
 4. Start the development server:
+
    ```bash
    npm run dev
    ```
@@ -108,14 +116,17 @@ crypto-weather-nexus/
 ## API Routes
 
 ### Cryptocurrency API
+
 - `GET /api/crypto` - Fetch cryptocurrency data
 - `GET /api/crypto/[id]` - Get detailed cryptocurrency information
 
 ### Weather API
+
 - `GET /api/weather` - Fetch weather data
 - `GET /api/weather/[city]` - Get detailed weather information
 
 ### WebSocket API
+
 - `GET /api/websocket` - WebSocket endpoint for real-time updates
 
 ## Contributing
