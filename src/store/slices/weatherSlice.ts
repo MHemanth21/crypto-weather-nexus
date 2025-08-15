@@ -21,6 +21,11 @@ interface WeatherData {
     description: string;
   }>;
   dt: number;
+  visibility?: number;
+  sys?: {
+    sunrise: number;
+    sunset: number;
+  };
 }
 
 interface WeatherState {
@@ -56,6 +61,8 @@ export const fetchWeatherData = createAsyncThunk(
           wind: response.data.wind,
           weather: response.data.weather,
           dt: response.data.dt,
+          visibility: response.data.visibility,
+          sys: response.data.sys,
         };
       })
     );

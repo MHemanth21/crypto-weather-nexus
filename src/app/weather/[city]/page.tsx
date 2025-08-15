@@ -109,16 +109,28 @@ export default function WeatherDetail() {
               <p className="text-gray-400 text-sm sm:text-base">Conditions</p>
               <p className="text-white text-sm sm:text-base capitalize">{weather.weather[0].description}</p>
             </div>
-            <div>
-              <p className="text-gray-400 text-sm sm:text-base">Visibility</p>
-              <p className="text-white text-sm sm:text-base">{(weather.visibility / 1000).toFixed(1)} km</p>
-            </div>
-            <div>
-              <p className="text-gray-400 text-sm sm:text-base">Sunrise</p>
-              <p className="text-white text-sm sm:text-base">
-                {new Date(weather.sys.sunrise * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-              </p>
-            </div>
+            {weather.visibility && (
+              <div>
+                <p className="text-gray-400 text-sm sm:text-base">Visibility</p>
+                <p className="text-white text-sm sm:text-base">{(weather.visibility / 1000).toFixed(1)} km</p>
+              </div>
+            )}
+            {weather.sys?.sunrise && (
+              <div>
+                <p className="text-gray-400 text-sm sm:text-base">Sunrise</p>
+                <p className="text-white text-sm sm:text-base">
+                  {new Date(weather.sys.sunrise * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                </p>
+              </div>
+            )}
+            {weather.sys?.sunset && (
+              <div>
+                <p className="text-gray-400 text-sm sm:text-base">Sunset</p>
+                <p className="text-white text-sm sm:text-base">
+                  {new Date(weather.sys.sunset * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </div>

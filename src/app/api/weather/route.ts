@@ -3,6 +3,9 @@ import { NextResponse } from 'next/server';
 const cache = new Map();
 const WEATHER_CACHE_DURATION = 300000; // 5 minutes
 
+// Force dynamic rendering for this route
+export const dynamic = 'force-dynamic';
+
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
@@ -40,7 +43,7 @@ export async function GET(request: Request) {
     if (!response.ok) {
       if (response.status === 404) {
         return NextResponse.json(
-          { error: 'City not found' },
+          { error: 'City not found' }, 
           { status: 404 }
         );
       }
